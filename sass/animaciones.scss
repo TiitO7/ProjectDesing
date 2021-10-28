@@ -1,0 +1,206 @@
+$negro:#222;
+$amarilloPagina:hsl(58, 96%, 82%);
+$azul:dodgerblue;
+.line-2 {
+    position: relative;
+    top: 10%;
+    font-size: 15px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.imagen1 img:hover {
+    filter: grayscale(80%);
+}
+
+.text {
+    fill: none;
+    stroke-width: 3;
+    font-size: 5em;
+    font-weight: 50;
+    stroke-linejoin: round;
+    stroke-dasharray: 70 330;
+    stroke-dashoffset: 0;
+    -webkit-animation: stroke 6s infinite linear;
+    animation: stroke 6s infinite linear;
+    &:nth-child(5n + 1) {
+        stroke: #F2385A;
+        -webkit-animation-delay: -1.2s;
+        animation-delay: -1.2s;
+    }
+    &:nth-child(5n + 2) {
+        stroke: #e7bb61;
+        -webkit-animation-delay: -2.4s;
+        animation-delay: -2.4s;
+    }
+    &:nth-child(5n + 3) {
+        stroke: #000000;
+        -webkit-animation-delay: -3.6s;
+        animation-delay: -3.6s;
+    }
+    &:nth-child(5n + 4) {
+        stroke: #1c0fb1;
+        -webkit-animation-delay: -4.8s;
+        animation-delay: -4.8s;
+    }
+    &:nth-child(5n + 5) {
+        stroke: #3AA1BF;
+        -webkit-animation-delay: -6s;
+        animation-delay: -6s;
+    }
+}
+
+//ESTRELLAS
+ :root {
+    --color-inactivo: #5f5050;
+    --color-hover: #fbff00;
+}
+
+.valoracion {
+    display: 0;
+    flex-direction: row-reverse;
+    button {
+        background-color: initial;
+        border: 0;
+        color: var(--color-inactivo);
+        transition: 1s all;
+        font-size: 8px;
+        &:hover {
+            cursor: pointer;
+            color: var(--color-hover);
+            transform: rotate(360deg);
+        }
+    }
+}
+
+button {
+    &:nth-child(1) {
+        &:hover {
+            ~ {
+                button {
+                    color: var(--color-hover);
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+    &:nth-child(2) {
+        &:hover {
+            ~ {
+                button {
+                    color: var(--color-hover);
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+    &:nth-child(3) {
+        &:hover {
+            ~ {
+                button {
+                    color: var(--color-hover);
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+    &:nth-child(4) {
+        &:hover {
+            ~ {
+                button {
+                    color: var(--color-hover);
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+    &:nth-child(5) {
+        &:hover {
+            ~ {
+                button {
+                    color: var(--color-hover);
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}
+
+.menu-lado2 {
+    @media (min-width: 1024px) {
+        width: 10%;
+        margin-top: 260px;
+        float: left;
+        font-style: italic;
+        background: -webkit-gradient(linear, left top, left bottom, from($amarilloPagina), to(#f5f8fa));
+        border: 2px solid $negro;
+        border-radius: 25px;
+        position: fixed;
+        padding-right: 250px;
+        .encabezado {
+            margin-left: 140px
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+        width: 10%;
+        margin-top: 260px;
+        float: left;
+        font-style: italic;
+        background: -webkit-gradient(linear, left top, left bottom, from($amarilloPagina), to(#f5f8fa));
+        border: 2px solid $negro;
+        border-radius: 25px;
+        position: fixed;
+        padding-right: 20px;
+        .encabezado {
+            margin-left: 100px
+        }
+    }
+    @media (min-width: 480px) and (max-width: 767px) {
+        width: 10%;
+        margin-top: 260px;
+        float: left;
+        font-style: italic;
+        background: -webkit-gradient(linear, left top, left bottom, from($amarilloPagina), to(#f5f8fa));
+        border: 2px solid $negro;
+        border-radius: 25px;
+        position: fixed;
+        padding-right: 20px;
+        .encabezado {
+            margin-left: 100px
+        }
+    }
+    @media (min-width: 0px) and (max-width: 480px) {
+        width: 10%;
+        margin-top: 260px;
+        float: left;
+        font-style: italic;
+        background: -webkit-gradient(linear, left top, left bottom, from($amarilloPagina), to(#f5f8fa));
+        border: 2px solid $negro;
+        border-radius: 25px;
+        position: fixed;
+        padding-right: 20px;
+        .encabezado {
+            margin-left: 100px
+        }
+    }
+}
+
+.line-1 {
+    position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    font-size: 15px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-70%);
+    margin-left: 60px;
+}
+
+.anim-typewriter {
+    animation: typewriter 2s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+}

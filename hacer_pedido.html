@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/hacer_pedido.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <ul>
+            <li><img src="img/logo.jpg">
+            </li>
+
+            <li href="index.html">
+
+                <a class="titulo" href="index.html">Ropaland</a>
+
+            </li>
+            <div class="container-search">
+                <li id="buscador">
+                    <section class="buscador">
+                        <input type="search" id="search" placeholder="Search...">
+                        <button class="icon">Search</button>
+                    </section>
+                </li>
+            </div>
+        </ul>
+
+    </header>
+    <div class="menu-general">
+        <ul class="menu">
+            <li class="item">
+                <div class="dropdown">
+                    <a class="dropbtn">Articulos por tipo</a>
+                    <div class="dropdown-content">
+                        <a class="dropbtn" href="ropa-hombre.html">Ropa</a>
+                        <a class="dropbtn" href="zapatos-mujer.html">Zapatos</a>
+                        <a class="dropbtn" href="bolsos.html">Bolsos</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item"><a href="ofertas.html">Ofertas Articulos</a></li>
+            <li class="item"><a href="hacer_pedido.html">Hacer pedido</a></li>
+        </ul>
+    </div>
+
+    <aside class="menu-lado">
+        <h1 class="encabezado">ARTICULOS</h1>
+        <div class="menu-aside">
+            <ul class="zapatos">
+                <h3>ZAPATOS</h3>
+                <li class="item"><a href="zapatos-hombre.html"> Hombre</a></li>
+                <li class="item"><a href="zapatos-mujer.html"> Mujer</a></li>
+                <li class="item"><a href="zapatos-nino.html"> Nin@ </a></li>
+            </ul>
+
+
+        </div>
+
+        <div class="menu-aside">
+            <ul class="zapatos">
+                <h3>ROPA</h3>
+                <li class="item"><a href="ropa-hombre.html"> Hombre</a></li>
+                <li class="item"><a href="ropa-mujer.html"> Mujer</a></li>
+                <li class="item"><a href="ropa-nino.html"> Nin@ </a></li>
+            </ul>
+        </div>
+
+        <div class="menu-aside3">
+            <ul class="zapatos">
+                <h3 class="">BOLSOS</h3>
+                <li class="item" style="text-align: center;"><a href="bolsos.html"> Visitar</a></li>
+
+            </ul>
+        </div>
+
+    </aside>
+
+    <main>
+
+        <div class="menu-main-2">
+            <h2 class="nombre-pagina"> CARRITO </h2>
+            <small class="seguimiento"> Inicio > Carrito </small>
+
+            <table class="table">
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>IVA</th>
+                    <th>Total</th>
+                </tr>
+                <tr class="fila">
+                    <td>
+                        <img class="imagen" src="img/adidas.png" alt="Avatar">
+                    </td>
+                    <td>Adidas Black</td>
+                    <td>47,50 €</td>
+                    <td>0,21%</td>
+                    <td>57 €</td>
+                </tr>
+                <tr class="fila">
+                    <td> <img class="imagen" src="img/zapa-adidasC.jpg " alt="Avatar">
+                    </td>
+                    <td>Adidas C40</td>
+                    <td>40 €</td>
+                    <td>0,21%</td>
+                    <td>43 €</td>
+                </tr>
+                <tr class="fila">
+                    <td> <img class="imagen" src="img/RM/3.jfif" alt="Avatar">
+                    </td>
+                    <td>Vaquerita</td>
+                    <td>50 €</td>
+                    <td>0,21%</td>
+                    <td>55 €</td>
+                </tr>
+                <tr class="fila">
+                    <td> <img class="imagen" src="img/RM/4.jfif" alt="Avatar">
+                    </td>
+                    <td>Chupa</td>
+                    <td>41,50 €</td>
+                    <td>0,21%</td>
+                    <td>45 €</td>
+                </tr>
+                <tr class="total">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>200 € <br>
+                        <small class="totalIva"> +2,30 IVA</small>
+                        <small class="totalIva"> +0,30 G.Envío</small>
+
+                        <small class="totalIva"> (--Incluido--)</small>
+                        <br>
+                        <a href="#miModal" class="pagar">Pagar</a>
+                        <div id="miModal" class="modal">
+                            <div class="modal-contenido">
+                                <a href="#"><i class="fas fa-sign-out-alt" ></i></a>
+                                <h2>MODAL PAGAR</h2>
+                                <p>Este es mi Modal para pagar</p>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+
+            </table>
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+        <div class="menu-footer ">
+            <ul class="menu ">
+                <li class="item "><a href="# "> Aviso Legal</a></li>
+                <li class="item "> <a> &copy;  ropaland@mejorropa.com  &copy;</a></li>
+                <li class="item "><a href="contacto.html"> Contactar</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

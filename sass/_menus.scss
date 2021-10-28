@@ -1,0 +1,987 @@
+            $negro:darken(#222, 20%);
+            $amarilloPagina:hsl(58, 96%, 82%);
+            $azul: lighten(rgb(9, 63, 117), 50%);
+            @keyframes blur {
+                from {
+                    text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 50px #fff, 0px 0px 50px #fff, 0px 0px 50px #ff0099, 0px 0px 150px #ff0099, 0px 10px 100px #ff0099, 0px 10px 100px #ff0099, 0px 10px 100px #ff0099, 0px 10px 100px #ff0099, 0px -10px 100px #ff0099, 0px -10px 100px #ff0099;
+                }
+            }
+            
+            @keyframes typewriter {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 15em;
+                }
+            }
+            
+            @keyframes blinkTextCursor {
+                from {
+                    border-right-color: rgba(255, 255, 255, .75);
+                }
+                to {
+                    border-right-color: transparent;
+                }
+            }
+            
+            @mixin nombre-pagina($name) {
+                .nombre-pagina-#{$name} {
+                    @if $name=="h" {
+                        color: rgb(59, 115, 4);
+                    }
+                    @else if $name=="m" {
+                        color: rosybrown;
+                    }
+                    @else if $name=="n" {
+                        color: $azul;
+                    }
+                }
+            }
+            
+            @mixin menu-main($variable:1350px, $variable3:190px) {
+                display: grid;
+                margin-top: 150px;
+                height: 475px;
+                width: $variable;
+                padding-top: 1px;
+                padding-bottom: 65px;
+                margin-left: $variable3;
+                float: inline;
+                font-style: italic;
+                text-align: center;
+                overflow: scroll;
+                -webkit-overflow-scrolling: touch;
+                position: fixed;
+                align-items: center;
+            }
+            
+            @mixin menu-footer($variable:187px) {
+                margin-top: 670px;
+                background: $negro;
+                position: fixed;
+                font-family: Arial, Helvetica, sans-serif;
+                li {
+                    display: inline-block;
+                    list-style: none;
+                    font-size: 14px;
+                    padding: 10px $variable;
+                    white-space: nowrap;
+                    .item {
+                        align-content: center;
+                        margin-left: 55px;
+                        color: white;
+                    }
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        &:hover {
+                            color: aqua;
+                        }
+                    }
+                }
+            }
+            
+            @mixin menu-general($variable:100%) {
+                .menu {
+                    //grid
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    align-content: center;
+                    overflow: hidden;
+                    .item {
+                        padding: 5px $variable;
+                        float: left;
+                        a {
+                            color: white;
+                            text-decoration: none;
+                            &:hover {
+                                color: aqua;
+                            }
+                        }
+                        .dropdown {
+                            position: fixed;
+                            display: inline-block;
+                            .dropbtn {
+                                color: white;
+                                border: none;
+                                cursor: pointer;
+                                padding: 20px;
+                                padding-bottom: 20px;
+                                &:hover {
+                                    color: aqua;
+                                }
+                            }
+                            .dropdown-content {
+                                display: none;
+                                position: absolute;
+                                color: white;
+                                margin-left: 10px;
+                            }
+                            &:hover .dropdown-content {
+                                display: block;
+                                background-color: black;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            @mixin menu-lado($variable:150%, $width:10%) {
+                margin-top: 200px;
+                width: $width;
+                float: left;
+                font-style: italic;
+                background: -webkit-gradient(linear, left top, left bottom, from($amarilloPagina), to(#f5f8fa));
+                border: 2px solid black;
+                border-radius: 25px;
+                position: fixed;
+                .encabezado {
+                    color: solid black;
+                    text-decoration: underline;
+                    text-align: center;
+                    font-size: $variable;
+                }
+            }
+            
+            @mixin menu-lado-2($variable:10px, $width:6.5%, $variable2: 15px, $paddingR:20px) {
+                width: $width;
+                float: left;
+                font-style: italic;
+                background: -webkit-gradient(linear, left top, left bottom, from($negro), to($amarilloPagina));
+                border: 2px solid black;
+                border-radius: 25px;
+                position: fixed;
+                padding-right: $paddingR;
+                padding-bottom: 100px;
+                padding-top: 100px;
+                .menu-aside4 {
+                    padding: 5px $variable;
+                    align-content: center;
+                    border-radius: 25px;
+                    .menu-animaciones {
+                        .anim-typewriter2 {
+                            animation: typewriter 2s steps(14) 1s 1 normal, blinkTextCursor 500ms steps(14) start;
+                            font-size: 10px;
+                        }
+                    }
+                    .area {
+                        text-align: center;
+                        text-align: center;
+                        color: #fff;
+                        font-size: 35px;
+                        text-transform: uppercase;
+                        animation: blur 2s ease-out infinite;
+                        text-shadow: 0px 0px 5px #fff, 0px 0px 7px #ff0000;
+                        padding-bottom: 0px;
+                        display: inline;
+                    }
+                }
+            }
+            
+            @mixin menu-aside-margin( $margin, $value) {
+                #{$margin}: $value;
+            }
+            
+            @mixin menu-aside($variable:10px, $variable2: 20px, $variable3:15px) {
+                align-content: center;
+                border: 2px solid #d3ce33;
+                border-radius: 25px;
+                .zapatos {
+                    font-family: "Lucida Console", "Courier New", monospace;
+                    color: $negro;
+                    margin-bottom: 20px;
+                    align-items: center;
+                    h3 {
+                        font-family: "Lucida Console", "Courier New", monospace;
+                        color: solid $negro;
+                        font-size: $variable2;
+                    }
+                    .item {
+                        color: solid $negro;
+                        font-size: $variable3;
+                        list-style: none;
+                        @include menu-aside-margin(padding-leftt, $variable);
+                        a {
+                            color: $azul;
+                            text-decoration: none;
+                            &:hover {
+                                text-decoration: underline;
+                                color: rgb(175, 40, 169);
+                                ;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            @mixin thumb($width:200px, $height:100px) {
+                .thumb {
+                    width: $width;
+                    height: $height;
+                    margin: 70px auto;
+                    perspective: 1000px;
+                    float: left;
+                    margin-left: 300px;
+                    margin-top: 100px;
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        background-size: 0, cover;
+                        transform-style: preserve-3d;
+                        transition: all 0.5s;
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 36px;
+                            background: inherit;
+                            background-size: cover, cover;
+                            background-position: bottom;
+                            transform: rotateX(90deg);
+                            transform-origin: bottom;
+                        }
+                        span {
+                            color: $azul;
+                            text-transform: uppercase;
+                            position: absolute;
+                            font-size: 1.50em;
+                            top: 100%;
+                            left: 0;
+                            width: 50%;
+                            font: bold 12px/36px "Open Sans";
+                            text-align: center;
+                            transform: rotateX(-89.99deg);
+                            transform-origin: top;
+                            z-index: 1;
+                        }
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            transition: all 0.5s;
+                            opacity: 0.15;
+                            transform: rotateX(95deg) translateZ(-80px) scale(0.75);
+                            transform-origin: bottom;
+                        }
+                    }
+                    &:hover a {
+                        transform: rotateX(80deg);
+                        transform-origin: center;
+                        &:before {
+                            opacity: 1;
+                            transform: rotateX(0) translateZ(-60px) scale(0.85);
+                        }
+                    }
+                }
+            }
+            
+            .menu-general {
+                @media (min-width: 1024px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-left: 15px;
+                    margin-top: 85px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    @include menu-general(180px);
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-left: 5px;
+                    margin-top: 90px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    @include menu-general(80px);
+                }
+                @media (min-width: 850px) and (max-width: 949px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-left: 5px;
+                    margin-top: 110px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    @include menu-general(70px);
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-left: 15px;
+                    margin-top: 125px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    @include menu-general(50px);
+                }
+                @media (min-width: 680px) and (max-width: 767px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-top: 100px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 10px;
+                    @include menu-general(60px);
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-top: 100px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 10px;
+                    @include menu-general(60px);
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-left: 15px;
+                    margin-top: 100px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 10px;
+                    @include menu-general(37px);
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    position: fixed;
+                    background-color: $negro;
+                    margin-left: 15px;
+                    margin-top: 100px;
+                    margin-bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 10px;
+                    @include menu-general(23px);
+                }
+            }
+            
+            .menu-lado {
+                @media (min-width: 1024px) {
+                    @include menu-lado();
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    @include menu-lado(20px, 20%);
+                }
+                @media (min-width: 850px) and (max-width: 949px) {
+                    @include menu-lado(15px, 15%);
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    @include menu-lado(15px, 15%);
+                }
+                @media (min-width: 680px) and (max-width: 767px) {
+                    @include menu-lado(15px, 15%);
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    @include menu-lado(15px, 15%);
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    @include menu-lado(15px, 15%);
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    @include menu-lado(10px, 20%);
+                }
+            }
+            
+            .menu-lado-2 {
+                @media (min-width: 1024px) {
+                    margin-top: 200px;
+                    @include menu-lado-2();
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(20px, 7%, 30px, 100px);
+                }
+                @media (min-width: 900px) and (max-width: 949px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(10px, 7%, 30px, 50px);
+                }
+                @media (min-width: 850px) and (max-width: 899px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(10px, 7%, 30px, 50px);
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(10px, 7%, 30px, 50px);
+                }
+                @media (min-width: 580px) and (max-width: 767px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(10px, 7%, 30px, 50px);
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(10px, 7%, 30px, 55px);
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(7px, 7%, 30px, 60px);
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    margin-top: 200px;
+                    @include menu-lado-2(7px, 7%, 30px, 60px);
+                }
+            }
+            
+            .menu-main {
+                @include nombre-pagina("h");
+                @include nombre-pagina("m");
+                @include nombre-pagina("n");
+                @media (min-width: 1024px) {
+                    @include menu-main(1350px, 200px);
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    @include menu-main(850px, 190px);
+                }
+                @media (min-width: 850px) and (max-width: 949px) {
+                    @include menu-main(800px, 120px);
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    @include menu-main(750px, 110px);
+                    .nombre-pagina {
+                        margin-top: 30px;
+                        font-size: 20px;
+                        small {
+                            font-size: 5px;
+                        }
+                    }
+                }
+                @media (min-width: 580px) and (max-width: 767px) {
+                    @include menu-main(700px, 90px);
+                    .nombre-pagina {
+                        margin-top: 10px;
+                        font-size: 20px;
+                        small {
+                            font-size: 5px;
+                        }
+                    }
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    @include menu-main(600px, 90px);
+                    .nombre-pagina {
+                        margin-top: 30px;
+                        font-size: 20px;
+                        small {
+                            font-size: 5px;
+                        }
+                    }
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    @include menu-main(600px, 70px);
+                    .nombre-pagina {
+                        margin-top: 30px;
+                        font-size: 20px;
+                        small {
+                            font-size: 5px;
+                        }
+                    }
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    @include menu-main(400px, 70px);
+                    .nombre-pagina {
+                        margin-top: 30px;
+                        font-size: 10px;
+                        small {
+                            font-size: 5px;
+                        }
+                    }
+                }
+            }
+            
+            .menu-main-2 {
+                @media (min-width: 1024px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1400px;
+                    padding-bottom: 65px;
+                    margin-left: 175px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    @include thumb(150px, 150px);
+                    .table {
+                        display: table;
+                        width: 1350px;
+                        font-size: 20px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 15px;
+                            display: table-row;
+                            td {
+                                display: table-cell;
+                            }
+                            img.imagen {
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1350px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    .nombre-pagina {
+                        margin-right: 300px;
+                    }
+                    .seguimiento {
+                        margin-right: 300px;
+                    }
+                    @include thumb(50px, 50px);
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .formulario {
+                        margin-right: 300px;
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                    .table {
+                        display: table;
+                        margin-left: 175px;
+                        width: 800px;
+                        font-size: 20px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 15px;
+                            display: table-row;
+                            td {
+                                display: table-cell;
+                            }
+                            img.imagen {
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 850px) and (max-width: 949px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1350px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    .nombre-pagina {
+                        margin-right: 300px;
+                    }
+                    .seguimiento {
+                        margin-right: 300px;
+                    }
+                    @include thumb(50px, 50px);
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+                    .formulario {
+                        margin-right: 300px;
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                    .table {
+                        display: table;
+                        width: 800px;
+                        margin-left: 175px;
+                        font-size: 20px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 15px;
+                            display: table-row;
+                            td {
+                                display: table-cell;
+                            }
+                            img.imagen {
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1350px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    .nombre-pagina {
+                        margin-right: 500px;
+                    }
+                    .seguimiento {
+                        margin-right: 500px;
+                    }
+                    @include thumb(50px, 50px);
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+                    .formulario {
+                        margin-right: 500px;
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                    .table {
+                        display: table;
+                        width: 1350px;
+                        font-size: 20px;
+                        width: 700px;
+                        margin-left: 125px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 15px;
+                            img.imagen {
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 580px) and (max-width: 767px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1350px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    .nombre-pagina {
+                        margin-right: 500px;
+                    }
+                    .seguimiento {
+                        margin-right: 500px;
+                    }
+                    @include thumb(50px, 50px);
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+                    .formulario {
+                        margin-right: 500px;
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                    .table {
+                        display: table;
+                        font-size: 20px;
+                        width: 700px;
+                        margin-left: 125px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 15px;
+                            img.imagen {
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1350px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    .nombre-pagina {
+                        margin-right: 800px;
+                    }
+                    .seguimiento {
+                        margin-right: 800px;
+                    }
+                    @include thumb(50px, 50px);
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+                    .formulario {
+                        margin-right: 800px;
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                    .table {
+                        display: table;
+                        width: 450px;
+                        margin-left: 100px;
+                        font-size: 20px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 15px;
+                            img.imagen {
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1350px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    .nombre-pagina {
+                        margin-right: 900px;
+                        margin-top: 200px;
+                    }
+                    .seguimiento {
+                        margin-right: 900px;
+                    }
+                    @include thumb(50px, 50px);
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+                    .formulario {
+                        margin-right: 900px;
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                    .table {
+                        display: table;
+                        width: 450px;
+                        margin-left: 100px;
+                        font-size: 20px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 15px;
+                            img.imagen {
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    margin-top: 130px;
+                    height: 480px;
+                    width: 1350px;
+                    font-style: italic;
+                    text-align: center;
+                    overflow-x: hidden;
+                    position: fixed;
+                    align-content: center;
+                    .nombre-pagina {
+                        margin-top: 100px;
+                        margin-right: 900px;
+                    }
+                    .seguimiento {
+                        margin-right: 900px;
+                    }
+                    @include thumb(50px, 50px);
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                    .formulario {
+                        margin-right: 900px;
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                    .table {
+                        display: table;
+                        width: 400px;
+                        margin-left: 100px;
+                        font-size: 10px;
+                        .fila {
+                            font: bold 90% monospace;
+                            color: $azul;
+                            font-size: 10px;
+                            td {
+                                font-size: 10px;
+                            }
+                            img.imagen {
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+                        .total {
+                            font-size: x-large;
+                            color: red;
+                            .totalIva {
+                                font-size: 10px;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .menu-footer {
+                @media (min-width: 1024px) {
+                    @include menu-footer();
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    @include menu-footer();
+                }
+                @media (min-width: 900px) and (max-width: 949px) {
+                    @include menu-footer(70px);
+                }
+                @media (min-width: 850px) and (max-width: 899px) {
+                    @include menu-footer(70px);
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    @include menu-footer(60px);
+                }
+                @media (min-width: 580px) and (max-width: 767px) {
+                    @include menu-footer(50px);
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    @include menu-footer(30px);
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    @include menu-footer(20px);
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    @include menu-footer(5px);
+                }
+            }
+            
+            .menu-aside {
+                @media (min-width: 1024px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 900px) and (max-width: 949px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 850px) and (max-width: 899px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    @include menu-aside(1px, 12px, 10px);
+                }
+                @media (min-width: 580px) and (max-width: 767px) {
+                    @include menu-aside(1px, 12px, 10px);
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    @include menu-aside(1px, 10px, 10px);
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    @include menu-aside(1px, 10px, 10px);
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    @include menu-aside(1px, 10px, 10px);
+                }
+            }
+            
+            .menu-aside3 {
+                @media (min-width: 1024px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 950px) and (max-width: 1023px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 900px) and (max-width: 949px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 850px) and (max-width: 899px) {
+                    @include menu-aside();
+                }
+                @media (min-width: 768px) and (max-width: 849px) {
+                    @include menu-aside(1px, 12px, 10px);
+                }
+                @media (min-width: 580px) and (max-width: 767px) {
+                    @include menu-aside(1px, 12px, 10px);
+                }
+                @media (min-width: 580px) and (max-width: 679px) {
+                    @include menu-aside(1px, 10px, 10px);
+                }
+                @media (min-width: 480px) and (max-width: 579px) {
+                    @include menu-aside(1px, 10px, 10px);
+                }
+                @media (min-width: 0px) and (max-width: 479px) {
+                    @include menu-aside(1px, 10px, 10px);
+                }
+            }
